@@ -3,36 +3,119 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kaynaklar - VS Code v1.110</title>
+  <meta name="description" content="VS Code v1.110 Kursu kaynaklar sayfasi — resmi release notes, Copilot dokumanlari ve sonraki adimlar.">
+  <title>Kaynaklar — VS Code v1.110 | Techcareer</title>
   <link rel="stylesheet" href="../assets/css/styles.css">
 </head>
 <body>
   <header class="topbar">
     <div class="container topbar-inner">
-      <div class="brand"><span class="brand-badge"></span> Kaynaklar</div>
-      <nav class="nav-links">
+      <a class="brand" href="../index.html">
+        <span class="brand-badge" aria-hidden="true"></span>
+        VS Code v1.110
+      </a>
+      <nav class="nav-links" aria-label="Ana navigasyon">
         <a href="../index.html">Ana Sayfa</a>
         <a href="modul-agent.html">Modul 1</a>
         <a href="modul-chat.html">Modul 2</a>
         <a href="modul-editor-terminal.html">Modul 3</a>
         <a href="quiz.html">Quiz</a>
+        <a href="kaynaklar.html" aria-current="page">Kaynaklar</a>
       </nav>
-      <button data-theme-toggle>Tema</button>
+      <button class="nav-toggle" aria-label="Menuyu ac/kapat" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <button class="theme-btn" data-theme-toggle aria-label="Tema degistir">Aydinlik Mod</button>
     </div>
   </header>
 
   <main class="container section">
-    <article class="card">
-      <h1>Kaynaklar ve Sonraki Adimlar</h1>
-      <ul class="list">
-        <li><a href="https://code.visualstudio.com/updates/v1_110" target="_blank" rel="noreferrer">Resmi VS Code v1.110 Notlari</a></li>
-        <li><a href="https://code.visualstudio.com/docs/copilot/agents" target="_blank" rel="noreferrer">Copilot Agent Dokumantasyonu</a></li>
-        <li><a href="https://code.visualstudio.com/docs/editor/accessibility" target="_blank" rel="noreferrer">Erisilebilirlik Dokumani</a></li>
-      </ul>
-      <p class="muted">Bu kurs dosyalari GitHub Pages uzerinde dogrudan yayinlanabilir statik HTML/CSS/JS yapisindadir.</p>
-      <a class="btn" href="../index.html">Ana Sayfaya Don</a>
+
+    <article class="card module-hero reveal">
+      <p class="kicker">Sonraki Adimlar</p>
+      <h1>Kaynaklar ve Linkler</h1>
+      <p class="muted">Kursu tamamladin. Asagida resmi dokumantasyon, Copilot rehberleri ve bu projeyle ilgili diger kaynaklar yer aliyor.</p>
     </article>
+
+    <section class="section grid-2">
+
+      <article class="card reveal reveal-delay-1">
+        <h2>Resmi VS Code Kaynaklari</h2>
+        <div class="info-row">
+          <span class="info-row-icon" aria-hidden="true">&#128196;</span>
+          <div class="info-row-body">
+            <strong><a href="https://code.visualstudio.com/updates/v1_110" target="_blank" rel="noreferrer noopener">VS Code v1.110 Release Notes</a></strong>
+            <span>Resmi Subat 2026 surum notlari — tum yenilikler ve ayarlar.</span>
+          </div>
+        </div>
+        <div class="info-row">
+          <span class="info-row-icon" aria-hidden="true">&#129302;</span>
+          <div class="info-row-body">
+            <strong><a href="https://code.visualstudio.com/docs/copilot/agents" target="_blank" rel="noreferrer noopener">Copilot Agent Dokumantasyonu</a></strong>
+            <span>Ajan olusturma, beceriler, hooklar ve plugin yapisina derinlemesine giris.</span>
+          </div>
+        </div>
+        <div class="info-row">
+          <span class="info-row-icon" aria-hidden="true">&#9855;</span>
+          <div class="info-row-body">
+            <strong><a href="https://code.visualstudio.com/docs/editor/accessibility" target="_blank" rel="noreferrer noopener">Erisilebilirlik Dokumani</a></strong>
+            <span>Ekran okuyucu destegi, klavye navigasyonu ve erisebilirlik becerileri.</span>
+          </div>
+        </div>
+        <div class="info-row">
+          <span class="info-row-icon" aria-hidden="true">&#128013;</span>
+          <div class="info-row-body">
+            <strong><a href="https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-python-envs" target="_blank" rel="noreferrer noopener">Python Environments Eklentisi</a></strong>
+            <span>GA asamasindaki Python ortam yonetici eklentisi.</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="card reveal reveal-delay-2">
+        <h2>Bu Kurs Hakkinda</h2>
+        <p class="muted">Bu kurs; VS Code v1.110 release notlarinin onemli ozelliklerini Turkce olarak ogretmek uzere hazirlandi.</p>
+        <ul class="list" style="margin-top:12px;">
+          <li>Tamamen statik HTML/CSS/JS — GitHub Pages uyumlu.</li>
+          <li>Yerel <code>localStorage</code> ile ilerleme takibi.</li>
+          <li>Karanlik/aydinlik tema destegi.</li>
+          <li>Mobil ve masaustu uyumlu tasarim.</li>
+          <li>Interaktif quiz ve SVG gorseller.</li>
+        </ul>
+        <div class="callout" style="margin-top:14px;">
+          <strong>Teknik yapi:</strong> Font, framework veya build araci kullanilmamistir. Saf HTML5, CSS custom properties ve vanilla JS.
+        </div>
+        <a class="btn" href="../index.html" style="margin-top:14px;">Ana Sayfaya Don</a>
+      </article>
+
+    </section>
+
+    <section class="section card reveal">
+      <h2>Hizli Referans: Onemli Ayarlar</h2>
+      <table>
+        <thead><tr><th>Ayar</th><th>Aciklama</th><th>Modul</th></tr></thead>
+        <tbody>
+          <tr><td><code>chat.plugins.enabled</code></td><td>Ajan eklentilerini etkinlestir</td><td>Modul 1</td></tr>
+          <tr><td><code>chat.tools.terminal.sandbox.enabled</code></td><td>Terminal sandbox</td><td>Modul 1</td></tr>
+          <tr><td><code>chat.notifyWindowOnResponseReceived</code></td><td>Sohbet yanit bildirimi</td><td>Modul 2</td></tr>
+          <tr><td><code>inlineChat.affordance</code></td><td>Satir ici chat konumu</td><td>Modul 2</td></tr>
+          <tr><td><code>terminal.integrated.enableImages</code></td><td>Kitty graphics acma</td><td>Modul 3</td></tr>
+          <tr><td><code>js/ts.format.enabled</code></td><td>JS/TS format birlestirme</td><td>Modul 3</td></tr>
+          <tr><td><code>git.addAICoAuthor</code></td><td>AI co-author etiketi</td><td>Modul 3</td></tr>
+          <tr><td><code>python.useEnvsExtension</code></td><td>Python Environments GA</td><td>Modul 3</td></tr>
+          <tr><td><code>workbench.editor.useModal</code></td><td>Modal editor</td><td>Modul 3</td></tr>
+          <tr><td><code>chat.exploreAgent.defaultModel</code></td><td>Explore alt-ajan modeli</td><td>Modul 2</td></tr>
+        </tbody>
+      </table>
+    </section>
+
   </main>
+
+  <footer>
+    <div class="container">
+      <span>VS Code v1.110 Release Notes | Techcareer Kursu</span>
+      <span>Kaynak: <a href="https://code.visualstudio.com/updates/v1_110" target="_blank" rel="noreferrer noopener">code.visualstudio.com/updates/v1_110</a></span>
+    </div>
+  </footer>
 
   <script src="../assets/js/app.js"></script>
 </body>

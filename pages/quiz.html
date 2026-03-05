@@ -3,53 +3,80 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quiz - VS Code v1.110</title>
+  <meta name="description" content="VS Code v1.110 Kursu Final Quiz — 5 soruluk mini test ile bilgini olc ve performans grafigini gor.">
+  <title>Quiz — VS Code v1.110 | Techcareer</title>
   <link rel="stylesheet" href="../assets/css/styles.css">
 </head>
 <body>
   <header class="topbar">
     <div class="container topbar-inner">
-      <div class="brand"><span class="brand-badge"></span> Quiz</div>
-      <nav class="nav-links">
+      <a class="brand" href="../index.html">
+        <span class="brand-badge" aria-hidden="true"></span>
+        VS Code v1.110
+      </a>
+      <nav class="nav-links" aria-label="Ana navigasyon">
         <a href="../index.html">Ana Sayfa</a>
         <a href="modul-agent.html">Modul 1</a>
         <a href="modul-chat.html">Modul 2</a>
         <a href="modul-editor-terminal.html">Modul 3</a>
-        <a class="active" href="quiz.html">Quiz</a>
+        <a href="quiz.html" aria-current="page">Quiz</a>
+        <a href="kaynaklar.html">Kaynaklar</a>
       </nav>
-      <button data-theme-toggle>Tema</button>
+      <button class="nav-toggle" aria-label="Menuyu ac/kapat" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <button class="theme-btn" data-theme-toggle aria-label="Tema degistir">Aydinlik Mod</button>
     </div>
   </header>
 
   <main class="container section">
-    <article class="card">
+
+    <!-- Header -->
+    <article class="card module-hero reveal">
       <p class="kicker">Final Test</p>
       <h1>Bilgini Test Et</h1>
-      <p class="muted">5 soruluk mini test. Bitirdikten sonra performans grafigi otomatik olusur.</p>
-      <label><input type="checkbox" data-progress-id="quiz"> Quizi tamamladim</label>
+      <p class="muted">5 soruluk mini test. Hepsini yanitladiktan sonra sonucu hesapla ve performans grafigini gor.</p>
+      <label class="checklist" style="margin-top:14px;">
+        <input type="checkbox" data-progress-id="quiz"> Quizi tamamladim
+      </label>
     </article>
 
-    <section class="section" id="quiz-root"></section>
+    <!-- Questions -->
+    <section class="section" id="quiz-root" aria-live="polite"></section>
 
+    <!-- Result -->
     <section class="section grid-2">
-      <article class="card">
+      <article class="card reveal reveal-delay-1">
+        <h2>Sonuc</h2>
         <button id="quiz-submit">Sonucu Hesapla</button>
-        <p id="quiz-result" class="muted" style="margin-top:10px;">Sonuc burada gorunecek.</p>
+        <p id="quiz-result" class="muted" style="margin-top:12px;">Tum sorulari yanitladiktan sonra butona tikla.</p>
       </article>
-      <article class="card">
-        <h2>Quiz Performansi</h2>
-        <svg id="quiz-chart" viewBox="0 0 320 220" aria-label="Quiz performans grafigi">
-          <image href="../assets/svg/quiz-performans-bos.svg" width="320" height="220" />
+      <article class="card reveal reveal-delay-2">
+        <h2>Performans Grafigi</h2>
+        <svg id="quiz-chart" viewBox="0 0 320 220" aria-label="Quiz performans grafigi" role="img">
+          <image href="../assets/svg/quiz-performans-bos.svg" width="320" height="220"/>
         </svg>
       </article>
     </section>
 
-    <section class="section card">
-      <h2>Devam Et</h2>
-      <p>Kursu bitirdin. Kaynaklar sayfasindan resmi baglantilara ulasabilirsin.</p>
-      <a class="btn" href="kaynaklar.html">Kaynaklar</a>
+    <!-- CTA -->
+    <section class="section card reveal">
+      <h2>Tebrikler!</h2>
+      <p class="muted">Kursu bitirdin. Resmi VS Code v1.110 notlarina ve Copilot dokumanlarına ulasmak icin Kaynaklar sayfasini incele.</p>
+      <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:14px;">
+        <a class="btn btn-primary" href="kaynaklar.html">Kaynaklara Git</a>
+        <a class="btn" href="../index.html">Ana Sayfaya Don</a>
+      </div>
     </section>
+
   </main>
+
+  <footer>
+    <div class="container">
+      <span>VS Code v1.110 | Final Quiz</span>
+      <a href="kaynaklar.html">Kaynaklar</a>
+    </div>
+  </footer>
 
   <script src="../assets/js/app.js"></script>
   <script src="../assets/js/quiz.js"></script>

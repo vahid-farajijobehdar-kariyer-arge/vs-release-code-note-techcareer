@@ -3,58 +3,256 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Modul 2 - Sohbet ve Oturumlar</title>
+  <meta name="description" content="VS Code v1.110 Modul 2: Smarter Sessions ve Chat Deneyimi — session memory, context compaction, fork, model picker.">
+  <title>Modul 2 — Sohbet ve Oturumlar | VS Code v1.110</title>
   <link rel="stylesheet" href="../assets/css/styles.css">
 </head>
 <body>
   <header class="topbar">
     <div class="container topbar-inner">
-      <div class="brand"><span class="brand-badge"></span> Modul 2</div>
-      <nav class="nav-links">
+      <a class="brand" href="../index.html">
+        <span class="brand-badge" aria-hidden="true"></span>
+        VS Code v1.110
+      </a>
+      <nav class="nav-links" aria-label="Ana navigasyon">
         <a href="../index.html">Ana Sayfa</a>
         <a href="modul-agent.html">Modul 1</a>
-        <a class="active" href="modul-chat.html">Modul 2</a>
+        <a href="modul-chat.html" aria-current="page">Modul 2</a>
         <a href="modul-editor-terminal.html">Modul 3</a>
         <a href="quiz.html">Quiz</a>
+        <a href="kaynaklar.html">Kaynaklar</a>
       </nav>
-      <button data-theme-toggle>Tema</button>
+      <button class="nav-toggle" aria-label="Menuyu ac/kapat" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <button class="theme-btn" data-theme-toggle aria-label="Tema degistir">Aydinlik Mod</button>
     </div>
   </header>
 
   <main class="container section">
-    <article class="card">
+
+    <!-- Module Hero -->
+    <article class="card module-hero reveal">
       <p class="kicker">Modul 2</p>
       <h1>Smarter Sessions ve Chat Deneyimi</h1>
-      <p class="muted">Bu bolumde oturum hafizasi, model secimi ve sohbet arayuzu gelismelerini ogrenirsin.</p>
-      <label><input type="checkbox" data-progress-id="m2"> Bu modulu tamamladim</label>
+      <p class="muted">Bu bolumde oturum hafizasi, baglam sikilastirma, oturum catallama, yeniden tasarlanan model secici ve sohbet arayuzu gelismelerini ogrenirsin.</p>
+      <label class="checklist" style="margin-top:14px;">
+        <input type="checkbox" data-progress-id="m2"> Bu modulu tamamladim
+      </label>
     </article>
 
+    <!-- Kritik Yenilikler + Grafik -->
     <section class="section grid-2">
-      <article class="card">
+      <article class="card reveal reveal-delay-1">
         <h2>Kritik Yenilikler</h2>
-        <ul class="list">
-          <li>Session memory ile planlar unutulmaz.</li>
-          <li>Context compaction ile uzun sohbetlerde baglam korunur.</li>
-          <li>Fork ile ayni konusmadan yeni dal acabilirsin.</li>
-          <li>Model picker artik daha net bolumlenmis durumda.</li>
-        </ul>
-        <div class="code-box">
-          <button class="copy-btn" data-copy-target="#cmd2">Kopyala</button>
-          <code id="cmd2">/compact odak: terminal ayarlari ve guvenlik kararlarim</code>
+        <div class="info-row">
+          <span class="info-row-icon" aria-hidden="true">&#128190;</span>
+          <div class="info-row-body">
+            <strong>Session Memory</strong>
+            <span>Plan ajani tarafindan olusturulan planlar konusma turlerinde ve baglam sikilastirmasindan sonra bile korunur.</span>
+          </div>
+        </div>
+        <div class="info-row">
+          <span class="info-row-icon" aria-hidden="true">&#128065;</span>
+          <div class="info-row-body">
+            <strong>Context Compaction</strong>
+            <span>Baglam penceresi sinira ulastiginda otomatik sikilasir. Manuel tetikleme icin <code>/compact</code> kullanilir.</span>
+          </div>
+        </div>
+        <div class="info-row">
+          <span class="info-row-icon" aria-hidden="true">&#127785;</span>
+          <div class="info-row-body">
+            <strong>Fork Session</strong>
+            <span>Mevcut konusma gecmisini kalitarak yeni, bagimsiz bir oturum dallandir.</span>
+          </div>
+        </div>
+        <div class="info-row">
+          <span class="info-row-icon" aria-hidden="true">&#127775;</span>
+          <div class="info-row-body">
+            <strong>Explore Subagent</strong>
+            <span>Plan ajani, kod tabani arastirmasini salt-okunur Explore alt-ajanina devreder. Varsayilan: Claude Haiku 4.5.</span>
+          </div>
         </div>
       </article>
-      <article class="card">
+
+      <article class="card reveal reveal-delay-2">
         <h2>Gelisim Radar</h2>
-        <img src="../assets/svg/radar-gelisim.svg" alt="Sohbet ve ajan gelisim radar grafigi">
+        <img src="../assets/svg/radar-gelisim.svg" alt="Sohbet ve ajan gelisim radar grafigi" loading="lazy">
       </article>
     </section>
 
-    <section class="section card">
-      <h2>Mini Gorev</h2>
-      <p>Bir chat senaryosu dusun: once plan olustur, sonra /compact kullan, sonra farkli yol icin /fork ile yeni oturum ac.</p>
-      <a class="btn" href="modul-editor-terminal.html">Sonraki Modul</a>
+    <!-- Context Compaction Detail -->
+    <section class="section card reveal">
+      <h2>Context Compaction — Detay</h2>
+      <p class="muted">Uzun sohbetlerde baglam alanini temizlemek icin iki yol:</p>
+      <div class="grid-2" style="margin-top:14px;">
+        <div>
+          <p class="kicker">Otomatik</p>
+          <ul class="list">
+            <li>Copilot, pencere sinira ulastiginda devreye girer.</li>
+            <li>Arka plan ve Claude ajan oturumlarinda da calisir.</li>
+            <li>Plan ajani, planini session memory'de korur.</li>
+          </ul>
+        </div>
+        <div>
+          <p class="kicker">Manuel</p>
+          <ul class="list">
+            <li><code>/compact</code> — sadece sikilastir.</li>
+            <li><code>/compact [talimat]</code> — konuya odaklanarak sikilastir.</li>
+            <li>Baglam penceresi kontrolunden de tetiklenebilir.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="code-box" style="margin-top:16px;">
+        <button class="copy-btn" data-copy-target="#cmd-compact">Kopyala</button>
+        <code id="cmd-compact">/compact veritabani sema ve auth kararlarina odaklan</code>
+      </div>
     </section>
+
+    <!-- Fork Session -->
+    <section class="section card reveal">
+      <h2>Fork — Oturumu Catallamak</h2>
+      <p class="muted">Ayni konusma gecmisinden bagimsiz bir dal olustur; farkli cozum yollarini dene.</p>
+      <ol class="step-list" style="margin-top:14px;">
+        <li>
+          <div>
+            <strong>Tum oturumu catal</strong>
+            <p>Sohbet girisine <code>/fork</code> yaz ve Enter'a bas.</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <strong>Kontrol noktasindan catal</strong>
+            <p>Herhangi bir sohbet mesajinin uzerine gelin, <em>Fork Conversation</em> secin.</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <strong>Bagimsiz devam et</strong>
+            <p>Catal alinan oturum tamamen bagimsizdir; ana oturumu etkilemez.</p>
+          </div>
+        </li>
+      </ol>
+      <div class="callout ok" style="margin-top:14px;">
+        <strong>Ne zaman kullanilir?</strong> Bir hata ayiklama oturumunda farkli bir yaklasimi denemek istediginde, onceki konusmayi kaybetmeden <code>/fork</code> ile yeni bir dal ac.
+      </div>
+    </section>
+
+    <!-- Model Picker + Diger -->
+    <section class="section grid-2">
+      <article class="card reveal reveal-delay-1">
+        <h2>Yeniden Tasarlanan Model Secici</h2>
+        <ul class="list">
+          <li><strong>Otomatik</strong> — her zaman en ustte gosterilir.</li>
+          <li><strong>One cikan ve son kullanilanlar</strong> — 4 yakın model + secilmis modeller.</li>
+          <li><strong>Diger modeller</strong> — daraltilabilir grup ve "Modelleri Yonet".</li>
+          <li>Model yetenekleri ve baglam penceresi boyutunu gosteren hover karti.</li>
+          <li>Hizli filtreleme icin arama kutusu.</li>
+        </ul>
+      </article>
+
+      <article class="card reveal reveal-delay-2">
+        <h2>Ozel Dusunce Cumlecikleri</h2>
+        <p class="muted">Ajan dusunurken gosterilen yukleme metnini kisisellestirebilirsin.</p>
+        <div class="code-box">
+          <button class="copy-btn" data-copy-target="#cmd-phrases">Kopyala</button>
+          <code id="cmd-phrases">"chat.agent.thinking.phrases": {
+  "mode": "replace",
+  "phrases": [
+    "Kod satırlari taranıyor...",
+    "Baglam analiz ediliyor...",
+    "Optimal cozum hesaplaniyor...",
+    "Degiskenler dogrulanıyor..."
+  ]
+}</code>
+        </div>
+      </article>
+    </section>
+
+    <!-- Sohbet Deneyimi -->
+    <section class="section card reveal">
+      <h2>Sohbet Deneyimi Yenilikleri</h2>
+      <div class="feature-grid">
+        <div class="feature-item">
+          <span class="feature-icon" aria-hidden="true">&#128276;</span>
+          <span class="feature-title">OS Bildirimleri</span>
+          <span class="feature-desc">VS Code odakta bile sohbet yaniti ve onay bildirimleri alabilirsin.</span>
+        </div>
+        <div class="feature-item">
+          <span class="feature-icon" aria-hidden="true">&#128432;</span>
+          <span class="feature-title">Daraltilabilir Terminal</span>
+          <span class="feature-desc">Terminal arac cagrıları ozet baslikli daraltilabilir bolumler olarak gosterilir.</span>
+        </div>
+        <div class="feature-item">
+          <span class="feature-icon" aria-hidden="true">&#9997;</span>
+          <span class="feature-title">Satir Ici Hover Modu</span>
+          <span class="feature-desc">Inline chat, satirlar arasi yerine hover tabanli yeni UI'a gecis yapiyor.</span>
+        </div>
+        <div class="feature-item">
+          <span class="feature-icon" aria-hidden="true">&#128161;</span>
+          <span class="feature-title">Baglamsal Ipuclari</span>
+          <span class="feature-desc">Kullanmadigin ozellikleri kesfetmen icin kisisellestirilmis ipuclari.</span>
+        </div>
+        <div class="feature-item">
+          <span class="feature-icon" aria-hidden="true">&#9881;</span>
+          <span class="feature-title">Otomatik Askiya Alma Onleme</span>
+          <span class="feature-desc">Sohbet calisirken OS'e makinenin askiya alinmamasini soyler.</span>
+        </div>
+        <div class="feature-item">
+          <span class="feature-icon" aria-hidden="true">&#9997;</span>
+          <span class="feature-title">Satir Ici Chat Yaklasimi</span>
+          <span class="feature-desc"><code>inlineChat.affordance</code>: editor veya gutter konumlarinda hizli erisim menüsü.</span>
+        </div>
+      </div>
+
+      <table style="margin-top:16px;">
+        <thead><tr><th>Ayar</th><th>Aciklama</th><th>Deger</th></tr></thead>
+        <tbody>
+          <tr><td><code>chat.notifyWindowOnResponseReceived</code></td><td>Yanit bildirimi</td><td><code>always</code></td></tr>
+          <tr><td><code>chat.notifyWindowOnConfirmation</code></td><td>Onay bildirimi</td><td><code>always</code></td></tr>
+          <tr><td><code>chat.tools.terminal.simpleCollapsible</code></td><td>Daraltilabilir terminal</td><td><code>true</code></td></tr>
+          <tr><td><code>inlineChat.affordance</code></td><td>Satir ici chat konumu</td><td><code>gutter</code></td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Mini Gorev -->
+    <section class="section card reveal">
+      <h2>Mini Gorev</h2>
+      <p class="muted">Asagidaki senaryoyu adim adim dene:</p>
+      <ol class="step-list">
+        <li>
+          <div>
+            <strong>Plan olustur</strong>
+            <p>Yeni bir sohbet ac ve bir proje icin plan olusturmasini iste.</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <strong><code>/compact</code> kullan</strong>
+            <p>Bir sure sonra <code>/compact auth modulu kararlarina odaklan</code> yaz.</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <strong>Farkli yol icin <code>/fork</code></strong>
+            <p>Alternatif bir yaklasim denemek icin <code>/fork</code> ile yeni oturum ac.</p>
+          </div>
+        </li>
+      </ol>
+      <p class="mt-md">
+        <a class="btn btn-primary" href="modul-editor-terminal.html">Modul 3'e Gec</a>
+      </p>
+    </section>
+
   </main>
+
+  <footer>
+    <div class="container">
+      <span>VS Code v1.110 | Modul 2: Sohbet ve Oturumlar</span>
+      <a href="kaynaklar.html">Kaynaklar</a>
+    </div>
+  </footer>
 
   <script src="../assets/js/app.js"></script>
 </body>

@@ -3,71 +3,195 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Modul 1 - Ajan Kontrolleri</title>
+  <meta name="description" content="VS Code v1.110 Modul 1: Ajan Kontrolleri — arka plan ajanlari, Claude ajanlar, Debug Paneli, Auto Approve ve plugin yapisi.">
+  <title>Modul 1 — Ajan Kontrolleri | VS Code v1.110</title>
   <link rel="stylesheet" href="../assets/css/styles.css">
 </head>
 <body>
   <header class="topbar">
     <div class="container topbar-inner">
-      <div class="brand"><span class="brand-badge"></span> Modul 1</div>
-      <nav class="nav-links">
+      <a class="brand" href="../index.html">
+        <span class="brand-badge" aria-hidden="true"></span>
+        VS Code v1.110
+      </a>
+      <nav class="nav-links" aria-label="Ana navigasyon">
         <a href="../index.html">Ana Sayfa</a>
-        <a class="active" href="modul-agent.html">Modul 1</a>
+        <a href="modul-agent.html" aria-current="page">Modul 1</a>
         <a href="modul-chat.html">Modul 2</a>
         <a href="modul-editor-terminal.html">Modul 3</a>
         <a href="quiz.html">Quiz</a>
+        <a href="kaynaklar.html">Kaynaklar</a>
       </nav>
-      <button data-theme-toggle>Tema</button>
+      <button class="nav-toggle" aria-label="Menuyu ac/kapat" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <button class="theme-btn" data-theme-toggle aria-label="Tema degistir">Aydinlik Mod</button>
     </div>
   </header>
 
   <main class="container section">
-    <article class="card">
+
+    <!-- Module Hero -->
+    <article class="card module-hero reveal">
       <p class="kicker">Modul 1</p>
       <h1>Ajan Kontrolleri ve Genisletme</h1>
-      <p class="muted">Bu bolumde VS Code 1.110 ile gelen ajan ozelliklerini ogreneceksin: arka plan ajanlari, debug paneli, auto approve ve plugin yapisi.</p>
-      <label><input type="checkbox" data-progress-id="m1"> Bu modulu tamamladim</label>
+      <p class="muted">Bu bolumde VS Code 1.110 ile gelen ajan ozelliklerini ogreneceksin: arka plan ajanlari, Claude ajan yenilikleri, debug paneli, auto approve ve plugin yapisi.</p>
+      <label class="checklist" style="margin-top:14px;">
+        <input type="checkbox" data-progress-id="m1"> Bu modulu tamamladim
+      </label>
     </article>
 
+    <!-- Main Content -->
     <section class="section grid-2">
-      <article class="card">
+
+      <!-- Accordion: Kavramlar -->
+      <article class="card reveal reveal-delay-1">
         <h2>Ana Kavramlar</h2>
+
         <div class="accordion-item open">
-          <button class="accordion-header">Background Agents</button>
+          <button class="accordion-header" aria-expanded="true">Arka Plan Ajanlari</button>
           <div class="accordion-content">
-            Uzun gorevleri arka planda devam ettirir. /compact komutu ile baglami kucultebilirsin.
+            <p>Uzun gorevleri VS Code arka planinda calistiran ajanlardir. v1.110 ile birlikte;</p>
+            <ul class="list">
+              <li><code>/compact</code> komutu ile baglam sikilastirmasi yapilabilir.</li>
+              <li>Istem dosyalari, hooklar ve beceriler artik arka plan oturumlarinda da kullanilabilir.</li>
+              <li>Arka plan oturumlari yeniden adlandiriabilir.</li>
+            </ul>
+            <div class="callout">
+              <strong>Ornek:</strong> Buyuk bir refactor islemi balatip tarayicida baska bir sey yaparken ajan arka planda calismasini surdurur.
+            </div>
           </div>
         </div>
+
         <div class="accordion-item">
-          <button class="accordion-header">Agent Debug Panel</button>
+          <button class="accordion-header" aria-expanded="false">Claude Ajanlar</button>
           <div class="accordion-content">
-            Ajanin hangi araclari cagdirdigini ve hangi prompt/hook yukledigini canli gosterir.
+            <p>v1.109'da tanitilan Claude ajan deneyimi v1.110 ile genisletildi:</p>
+            <ul class="list">
+              <li><strong>Yonlendirme ve siralama:</strong> Ajan calisirken yeni mesaj gonderebilirsin.</li>
+              <li><code>/compact</code> — istege bagli baglam sikilastirma.</li>
+              <li><code>/agents</code> — ozel ajanlari listele ve yonet.</li>
+              <li><code>/hooks</code> — Claude hookları yonet.</li>
+              <li><code>getDiagnostics</code> araci ile editor sorunlarina erisim.</li>
+            </ul>
           </div>
         </div>
+
         <div class="accordion-item">
-          <button class="accordion-header">Auto Approve</button>
+          <button class="accordion-header" aria-expanded="false">Agent Debug Paneli</button>
           <div class="accordion-content">
-            /autoApprove hiz kazandirir ama onay adimlarini atladigi icin dikkatli kullanilmalidir.
+            <p>Sohbet oturumlarini ve ozellestirme yuklemesini derin gorunurlukle izleyen yeni panel.</p>
+            <ul class="list">
+              <li>Ozellestirme olaylari, sistem istemleri, arac cagrıları gercek zamanli goster.</li>
+              <li>Hangi istem, beceri, hook yuklenmis — hepsini gorursun.</li>
+              <li>Gorsel event hiyerarsisi icin grafik gorunu.</li>
+            </ul>
+            <div class="callout">
+              <strong>Acilis:</strong> Komut Paleti → <code>Developer: Open Agent Debug Panel</code>
+            </div>
+            <div class="callout warning">
+              <strong>Not:</strong> Su an yalnizca yerel oturumlar destekleniyor. Loglar kalici degildir.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-header" aria-expanded="false">Auto Approve / YOLO Modu</button>
+          <div class="accordion-content">
+            <p>Tum arac onay istemlerini atlayan global mod:</p>
+            <ul class="list">
+              <li><code>/autoApprove</code> — global otomatik onayi ac.</li>
+              <li><code>/disableAutoApprove</code> — global otomatik onayi kapat.</li>
+              <li><code>/yolo</code> ve <code>/disableYolo</code> — ayni komutlarin takma adi.</li>
+            </ul>
+            <div class="callout danger">
+              <strong>Uyari:</strong> Tum onay adimlarini atlar. Guvenlik etkilerini anlamadan etkinlestirme.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-header" aria-expanded="false">Ajan Eklentileri</button>
+          <div class="accordion-content">
+            <p>Beceri, komut, ajan, MCP sunucusu ve hook paketleri bir arada:</p>
+            <ul class="list">
+              <li>Extensions gorunumunde <code>@agentPlugins</code> ile ara ve yukle.</li>
+              <li>Varsayilan kaynaklar: <code>copilot-plugins</code> ve <code>awesome-copilot</code>.</li>
+            </ul>
+            <table>
+              <thead><tr><th>Ayar</th><th>Aciklama</th></tr></thead>
+              <tbody>
+                <tr><td><code>chat.plugins.enabled</code></td><td>Eklentileri etkinlestir</td></tr>
+                <tr><td><code>chat.plugins.marketplaces</code></td><td>Ek marketplace depolari</td></tr>
+                <tr><td><code>chat.plugins.paths</code></td><td>Yerel eklenti dizinleri</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-header" aria-expanded="false">Sohbetten Ozellestirme Olusturma</button>
+          <div class="accordion-content">
+            <p>Ajan modunda yeni <code>/create-*</code> slash komutlari:</p>
+            <table>
+              <thead><tr><th>Komut</th><th>Amac</th></tr></thead>
+              <tbody>
+                <tr><td><code>/create-prompt</code></td><td>Yeniden kullanilabilir istem dosyasi</td></tr>
+                <tr><td><code>/create-skill</code></td><td>Cok adimli is akisi paketi</td></tr>
+                <tr><td><code>/create-agent</code></td><td>Ozel ajan kisiligi</td></tr>
+                <tr><td><code>/create-hook</code></td><td>Yasam dongusu hook yapilandirmasi</td></tr>
+              </tbody>
+            </table>
+            <div class="callout ok">
+              <strong>Ipucu:</strong> Dogal dil de calısır — "Bu is akisini bir beceri olarak kaydet" yazman yeterli.
+            </div>
           </div>
         </div>
       </article>
 
-      <article class="card">
-        <h2>Ozet Grafik</h2>
-        <img src="../assets/svg/zaman-cizelgesi.svg" alt="Ajan ozellikleri zaman cizelgesi">
-      </article>
+      <!-- Right column -->
+      <div>
+        <article class="card reveal reveal-delay-2">
+          <h2>Zaman Cizelgesi</h2>
+          <img src="../assets/svg/zaman-cizelgesi.svg" alt="Ajan ozelliklerinin v1.109 ve v1.110 zaman cizelgesi" loading="lazy">
+        </article>
+
+        <article class="card reveal reveal-delay-2" style="margin-top:18px;">
+          <h2>Usages ve Rename Araclari</h2>
+          <p class="muted">Guncellenmis <code>usages</code> araci ve yeni <code>rename</code> araci — yuksek hassasiyetli navigasyon ve refactor icin LSP kullanir.</p>
+          <div class="code-box">
+            <button class="copy-btn" data-copy-target="#cmd-rename">Kopyala</button>
+            <code id="cmd-rename">#rename kullan ve fib fonksiyonunu fibonacci olarak degistir</code>
+          </div>
+        </article>
+      </div>
     </section>
 
-    <section class="section card">
+    <!-- Code Example -->
+    <section class="section card reveal">
       <h2>Kopyala ve Dene</h2>
-      <p class="muted">Ornek komutu kopyalayip terminalde deneyebilirsin.</p>
+      <p class="muted">Ornek plugin kurulum komutunu kopyalayip VS Code terminalinde dene.</p>
       <div class="code-box">
         <button class="copy-btn" data-copy-target="#cmd1">Kopyala</button>
         <code id="cmd1">copilot plugin install ornek-plugin@awesome-copilot</code>
       </div>
-      <a class="btn" href="modul-chat.html">Sonraki Modul</a>
+      <div class="code-box">
+        <button class="copy-btn" data-copy-target="#cmd1b">Kopyala</button>
+        <code id="cmd1b">/compact terminal ayarlari ve guvenlik kararlarima odaklan</code>
+      </div>
+      <p class="mt-md">
+        <a class="btn btn-primary" href="modul-chat.html">Modul 2'ye Gec</a>
+      </p>
     </section>
+
   </main>
+
+  <footer>
+    <div class="container">
+      <span>VS Code v1.110 | Modul 1: Ajan Kontrolleri</span>
+      <a href="kaynaklar.html">Kaynaklar</a>
+    </div>
+  </footer>
 
   <script src="../assets/js/app.js"></script>
 </body>

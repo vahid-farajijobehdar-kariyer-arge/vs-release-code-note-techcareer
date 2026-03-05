@@ -3,92 +3,158 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="VS Code v1.110 ozelliklerini Turkce ogrenin. Ajan kontrolleri, smarter sessions, terminal ve dil iyilestirmeleri.">
   <title>VS Code v1.110 Kursu | Techcareer</title>
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
   <header class="topbar">
     <div class="container topbar-inner">
-      <div class="brand"><span class="brand-badge"></span> VS Release Code Note</div>
-      <nav class="nav-links">
-        <a class="active" href="index.html">Ana Sayfa</a>
+      <a class="brand" href="index.html">
+        <span class="brand-badge" aria-hidden="true"></span>
+        VS Code v1.110
+      </a>
+      <nav class="nav-links" aria-label="Ana navigasyon">
+        <a href="index.html" aria-current="page">Ana Sayfa</a>
         <a href="pages/modul-agent.html">Modul 1</a>
         <a href="pages/modul-chat.html">Modul 2</a>
         <a href="pages/modul-editor-terminal.html">Modul 3</a>
         <a href="pages/quiz.html">Quiz</a>
+        <a href="pages/kaynaklar.html">Kaynaklar</a>
       </nav>
-      <button data-theme-toggle>Tema</button>
+      <button class="nav-toggle" aria-label="Menuyu ac/kapat" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <button class="theme-btn" data-theme-toggle aria-label="Tema degistir">Aydinlik Mod</button>
     </div>
   </header>
 
   <main class="container">
+
+    <!-- Hero -->
     <section class="hero">
       <div class="hero-grid">
-        <article class="card">
-          <p class="kicker">Techcareer Ozel</p>
-          <h1>VS Code 1.110 Notlarini Ogren, Uygula, Test Et</h1>
-          <p class="muted">Bu mini kurs 15+ yas icin hazirlandi. Cok teknik bogmadan, gercek gelistirici bakisiyla yeni ozellikleri adim adim ogrenirsin.</p>
+        <article class="card module-hero reveal">
+          <p class="kicker">Techcareer Ozel Kurs</p>
+          <h1>VS Code 1.110 — Ogren, Uygula, Test Et</h1>
+          <p class="muted">Bu mini kurs; ajan kontrolleri, akilli oturumlar, tarayici araclari, Kitty terminali ve JS/TS ayarlarini gercek gelistirici bakisiyla, Turkce olarak adim adim ogretir.</p>
           <div class="tags">
             <span class="tag">Tamamen Turkce</span>
-            <span class="tag">GitHub Pages Uyumlu</span>
+            <span class="tag">GitHub Pages</span>
             <span class="tag">Interaktif Quiz</span>
+            <span class="tag">3 Modul</span>
           </div>
-          <p style="margin-top:14px;">
-            <a class="btn" href="pages/modul-agent.html">Kursa Basla</a>
+          <p class="mt-md">
+            <a class="btn btn-primary" href="pages/modul-agent.html">Kursa Basla</a>
           </p>
         </article>
-        <article class="card">
+
+        <article class="card reveal reveal-delay-1">
           <h2>Kurs Ilerlemen</h2>
           <p class="muted" data-progress-text>%0 tamamlandi</p>
-          <div class="progress-wrap"><div class="progress-bar"></div></div>
-          <div class="list" style="margin-top:12px;">
-            <label><input type="checkbox" data-progress-id="m1"> Modul 1: Ajan Kontrolleri</label><br>
-            <label><input type="checkbox" data-progress-id="m2"> Modul 2: Sohbet Deneyimi</label><br>
-            <label><input type="checkbox" data-progress-id="m3"> Modul 3: Editor + Terminal</label><br>
+          <div class="progress-wrap" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-label="Kurs ilerleme cubugu">
+            <div class="progress-bar"></div>
+          </div>
+          <div class="checklist">
+            <label><input type="checkbox" data-progress-id="m1"> Modul 1: Ajan Kontrolleri</label>
+            <label><input type="checkbox" data-progress-id="m2"> Modul 2: Sohbet ve Oturumlar</label>
+            <label><input type="checkbox" data-progress-id="m3"> Modul 3: Editor + Terminal + Diller</label>
             <label><input type="checkbox" data-progress-id="quiz"> Quiz Tamamlandi</label>
           </div>
         </article>
       </div>
     </section>
 
-    <section class="section grid-2">
+    <!-- Highlights -->
+    <section class="section reveal">
       <article class="card">
-        <h2>Temel Ozet</h2>
-        <ul class="list">
-          <li>Agent plugins ve browser tools ile ajanlar daha guclu.</li>
-          <li>Context compaction ve session memory ile uzun sureli calisma kolay.</li>
-          <li>Chat deneyimi, model secimi ve bildirimler daha akici.</li>
-          <li>Terminalde Kitty graphics protocol ile zengin gorsel destegi.</li>
-        </ul>
-      </article>
-      <article class="card">
-        <h2>SVG Gorsellestirmeler</h2>
-        <img src="assets/svg/kategori-dagilimi.svg" alt="Ozellik kategorisi dagilimi"/>
+        <p class="kicker">v1.110 One Cikanlari</p>
+        <h2>Bu Surumde Neler Var?</h2>
+        <div class="feature-grid">
+          <div class="feature-item">
+            <span class="feature-icon" aria-hidden="true">&#9881;</span>
+            <span class="feature-title">Ajan Eklentileri</span>
+            <span class="feature-desc">Extensions gorunumunden hazir beceri, arac ve hook paketleri yukleyin.</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-icon" aria-hidden="true">&#127760;</span>
+            <span class="feature-title">Tarayici Araclari</span>
+            <span class="feature-desc">Ajan, entegre tarayiciyi surekli ve uygulamanizi test edebilir.</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-icon" aria-hidden="true">&#128190;</span>
+            <span class="feature-title">Oturum Bellegi</span>
+            <span class="feature-desc">Planlar, konusma turlerinde ve baglam sikilastirmasindan sonra bile korunur.</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-icon" aria-hidden="true">&#128065;</span>
+            <span class="feature-title">Ajan Debug Paneli</span>
+            <span class="feature-desc">Arac cagrılari, sistem istemleri ve yuklenen ozellestirmeleri canli goruntuleyin.</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-icon" aria-hidden="true">&#128247;</span>
+            <span class="feature-title">Kitty Protokolu</span>
+            <span class="feature-desc">Terminalde PNG/RGBA gorselleri yuksek kalitede render edin.</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-icon" aria-hidden="true">&#128257;</span>
+            <span class="feature-title">Context Compaction</span>
+            <span class="feature-desc">Uzun sohbetlerde /compact ile baglam penceresini temizleyin.</span>
+          </div>
+        </div>
       </article>
     </section>
 
+    <!-- Summary -->
+    <section class="section grid-2">
+      <article class="card reveal reveal-delay-1">
+        <h2>Temel Ozet</h2>
+        <ul class="list">
+          <li>Ajan eklentileri ve tarayici araclari ile ajanlar cok daha guclu hale geldi.</li>
+          <li>Context compaction ve session memory ile uzun sureli AI calismalari mumkun.</li>
+          <li>Sohbet arayuzu, model secimi ve bildirimler yeniden tasarlandi.</li>
+          <li>Kitty graphics protocol ile terminalde zengin gorsel desteği geldi.</li>
+          <li>JavaScript ve TypeScript ayarlari <code>js/ts.*</code> altinda birlesti.</li>
+          <li>Python Ortamlari eklentisi bir yil onicinden sonra GA oldu.</li>
+        </ul>
+      </article>
+      <article class="card reveal reveal-delay-2">
+        <h2>SVG Gorsellestirmeler</h2>
+        <img src="assets/svg/kategori-dagilimi.svg" alt="Ozellik kategorisi dagilim grafigi" loading="lazy">
+      </article>
+    </section>
+
+    <!-- Module Cards -->
     <section class="section grid-3">
-      <article class="card">
-        <h3>Modul 1</h3>
-        <p>Ajan kontrolleri, eklentiler ve /compact gibi temel komutlar.</p>
+      <article class="card reveal reveal-delay-1">
+        <p class="kicker">Modul 1</p>
+        <h3>Ajan Kontrolleri</h3>
+        <p class="muted">Arka plan ajanlari, Claude ajan yenilikleri, Debug Paneli, Auto Approve ve ajan eklentileri.</p>
         <a class="btn" href="pages/modul-agent.html">Modul 1'e Git</a>
       </article>
-      <article class="card">
-        <h3>Modul 2</h3>
-        <p>Smarter sessions, model picker, tips ve etkileşimli chat pratikleri.</p>
+      <article class="card reveal reveal-delay-2">
+        <p class="kicker">Modul 2</p>
+        <h3>Sohbet ve Oturumlar</h3>
+        <p class="muted">Session memory, context compaction, fork, model picker ve ozel dusunce cumlecikleri.</p>
         <a class="btn" href="pages/modul-chat.html">Modul 2'ye Git</a>
       </article>
-      <article class="card">
-        <h3>Modul 3</h3>
-        <p>Editor, terminal, diller, ayarlar ve gercek kullanim senaryolari.</p>
+      <article class="card reveal reveal-delay-3">
+        <p class="kicker">Modul 3</p>
+        <h3>Editor + Terminal + Diller</h3>
+        <p class="muted">Modal editor, NES uzak oneriler, Kitty graphics, JS/TS birlestirme ve Python ortamlari.</p>
         <a class="btn" href="pages/modul-editor-terminal.html">Modul 3'e Git</a>
       </article>
     </section>
+
   </main>
 
   <footer>
-    <div class="container">Kaynak: VS Code v1.110 release notes | Proje: vs-release-code-note-techcareer</div>
+    <div class="container">
+      <span>VS Code v1.110 Release Notes | Techcareer Kursu</span>
+      <a href="pages/kaynaklar.html">Kaynaklar ve Linkler</a>
+    </div>
   </footer>
+
   <script src="assets/js/app.js"></script>
 </body>
 </html>

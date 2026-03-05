@@ -3,59 +3,287 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Modul 3 - Editor, Terminal, Diller</title>
+  <meta name="description" content="VS Code v1.110 Modul 3: Editor, Terminal ve Diller — modal editor, NES, Kitty graphics, JS/TS birlestirme, Python ortamlari.">
+  <title>Modul 3 — Editor + Terminal + Diller | VS Code v1.110</title>
   <link rel="stylesheet" href="../assets/css/styles.css">
 </head>
 <body>
   <header class="topbar">
     <div class="container topbar-inner">
-      <div class="brand"><span class="brand-badge"></span> Modul 3</div>
-      <nav class="nav-links">
+      <a class="brand" href="../index.html">
+        <span class="brand-badge" aria-hidden="true"></span>
+        VS Code v1.110
+      </a>
+      <nav class="nav-links" aria-label="Ana navigasyon">
         <a href="../index.html">Ana Sayfa</a>
         <a href="modul-agent.html">Modul 1</a>
         <a href="modul-chat.html">Modul 2</a>
-        <a class="active" href="modul-editor-terminal.html">Modul 3</a>
+        <a href="modul-editor-terminal.html" aria-current="page">Modul 3</a>
         <a href="quiz.html">Quiz</a>
+        <a href="kaynaklar.html">Kaynaklar</a>
       </nav>
-      <button data-theme-toggle>Tema</button>
+      <button class="nav-toggle" aria-label="Menuyu ac/kapat" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <button class="theme-btn" data-theme-toggle aria-label="Tema degistir">Aydinlik Mod</button>
     </div>
   </header>
 
   <main class="container section">
-    <article class="card">
+
+    <!-- Module Hero -->
+    <article class="card module-hero reveal">
       <p class="kicker">Modul 3</p>
       <h1>Editor + Terminal + Diller</h1>
-      <p class="muted">Bu bolumde modal editor, bildirim konumu, NES, Kitty graphics protocol ve JS/TS ayar birlesimini ogrenirsin.</p>
-      <label><input type="checkbox" data-progress-id="m3"> Bu modulu tamamladim</label>
+      <p class="muted">Bu bolumde modal editor, uzak mesafeli Next Edit Suggestions, Kitty graphics protocol, JS/TS ayar birlestirme ve Python Ortamlari eklentisini ogrenirsin.</p>
+      <label class="checklist" style="margin-top:14px;">
+        <input type="checkbox" data-progress-id="m3"> Bu modulu tamamladim
+      </label>
     </article>
 
+    <!-- Hizli Ozet + Grafik -->
     <section class="section grid-2">
-      <article class="card">
+      <article class="card reveal reveal-delay-1">
         <h2>Hizli Ozet</h2>
-        <ul class="list">
-          <li>Modal editor deneyimi deneysel olarak geldi.</li>
-          <li>Next Edit Suggestions artik dosyada daha uzak noktalari da tahmin ediyor.</li>
-          <li>Terminalde Kitty graphics protocol ile gorsel kalitesi artti.</li>
-          <li>JavaScript ve TypeScript ayarlari js/ts.* altinda birlesti.</li>
-        </ul>
+        <div class="info-row">
+          <span class="info-row-icon" aria-hidden="true">&#128421;</span>
+          <div class="info-row-body">
+            <strong>Modal Editor</strong>
+            <span>Sekme duzenini bozmadan uzerine kayan yeni editor: Ayarlar, Profiller, AI Modelleri.</span>
+          </div>
+        </div>
+        <div class="info-row">
+          <span class="info-row-icon" aria-hidden="true">&#127919;</span>
+          <div class="info-row-body">
+            <strong>Uzak NES</strong>
+            <span>Next Edit Suggestions artik dosyanin herhangi bir yerinde duzenleme tahmin edebilir.</span>
+          </div>
+        </div>
+        <div class="info-row">
+          <span class="info-row-icon" aria-hidden="true">&#128444;</span>
+          <div class="info-row-body">
+            <strong>Kitty Graphics</strong>
+            <span>Terminalde PNG, 24-bit RGB, 32-bit RGBA formatlarinda yuksek kaliteli gorsel render.</span>
+          </div>
+        </div>
+        <div class="info-row">
+          <span class="info-row-icon" aria-hidden="true">&#128272;</span>
+          <div class="info-row-body">
+            <strong>JS/TS Birlestirme</strong>
+            <span>Tum JS/TS ayarlari <code>js/ts.*</code> prefiksi altinda birlestirildi.</span>
+          </div>
+        </div>
+        <div class="info-row">
+          <span class="info-row-icon" aria-hidden="true">&#128013;</span>
+          <div class="info-row-body">
+            <strong>Python Ortamlari GA</strong>
+            <span>Bir yillik preview'dan sonra Python Environments eklentisi Genel Kullanim'a gecti.</span>
+          </div>
+        </div>
       </article>
-      <article class="card">
+
+      <article class="card reveal reveal-delay-2">
         <h2>Kategori Dagilimi</h2>
-        <img src="../assets/svg/kategori-dagilimi.svg" alt="Ozellik kategori dagilimi">
+        <img src="../assets/svg/kategori-dagilimi.svg" alt="Ozellik kategori dagilim grafigi" loading="lazy">
       </article>
     </section>
 
-    <section class="section card">
-      <h2>Ayarlari Kopyala</h2>
+    <!-- Kitty Graphics -->
+    <section class="section card reveal">
+      <h2>Kitty Graphics Protocol</h2>
+      <p class="muted">Terminalde yuksek kaliteli gorsel rendering icin yeni protokol. Etkinlestirmek icin:</p>
       <div class="code-box">
-        <button class="copy-btn" data-copy-target="#cmd3">Kopyala</button>
-<code id="cmd3">"[typescript][typescriptreact]": {
-  "js/ts.format.enabled": true
+        <button class="copy-btn" data-copy-target="#cmd-kitty">Kopyala</button>
+        <code id="cmd-kitty">{
+  "terminal.integrated.enableImages": true,
+  "terminal.integrated.gpuAcceleration": "on"
 }</code>
       </div>
-      <a class="btn" href="quiz.html">Quiz'e Gec</a>
+      <div class="grid-2" style="margin-top:16px;">
+        <div>
+          <p class="kicker">Desteklenen Formatlar</p>
+          <ul class="list">
+            <li>PNG</li>
+            <li>24-bit RGB</li>
+            <li>32-bit RGBA</li>
+            <li>Chunked base64 + zlib sikistirma</li>
+          </ul>
+        </div>
+        <div>
+          <p class="kicker">Ozellikler</p>
+          <ul class="list">
+            <li>Olcekleme ve kirpma</li>
+            <li>Piksel ofsetleri</li>
+            <li>Z-index katmanlamasi</li>
+            <li>Gorsel yonetimi: depola, yerlesim, sil, guncelle</li>
+          </ul>
+        </div>
+      </div>
+      <div class="callout warning">
+        <strong>Not:</strong> Animasyonlar, goreli yerlesimler, Unicode yer tutuculari ve dosya tabanli aktarim henuz desteklenmemektedir.
+      </div>
+      <table style="margin-top:16px;">
+        <thead><tr><th>Ayar</th><th>Aciklama</th></tr></thead>
+        <tbody>
+          <tr><td><code>terminal.integrated.enableImages</code></td><td><code>true</code> olarak ayarla</td></tr>
+          <tr><td><code>terminal.integrated.gpuAcceleration</code></td><td><code>on</code> veya <code>auto</code> olmali</td></tr>
+          <tr><td><code>terminal.integrated.windowsUseConptyDll</code></td><td>Windows icin gerekli</td></tr>
+        </tbody>
+      </table>
     </section>
+
+    <!-- JS/TS + NES -->
+    <section class="section grid-2">
+      <article class="card reveal reveal-delay-1">
+        <h2>JS/TS Ayar Birlestirme</h2>
+        <p class="muted">Tum JS/TS ayarlari tek <code>js/ts.*</code> prefiks altinda toplandi. Eski ayarlar calismaya devam eder ama deprecated sayilir.</p>
+        <div class="code-box">
+          <button class="copy-btn" data-copy-target="#cmd-jsts">Kopyala</button>
+          <code id="cmd-jsts">// Oncesi (eski - kullanim disi)
+"javascript.format.enable": true,
+"typescript.format.enable": true
+
+// Sonrasi (yeni ve birlesik)
+"js/ts.format.enabled": true
+
+// Dile ozgu farklilik icin
+"[javascript][javascriptreact]": {
+  "js/ts.format.enabled": false
+},
+"[typescript][typescriptreact]": {
+  "js/ts.format.enabled": true
+}</code>
+        </div>
+      </article>
+
+      <article class="card reveal reveal-delay-2">
+        <h2>Next Edit Suggestions (NES)</h2>
+        <p class="muted">Artik dosyanin herhangi bir yerini tahmin edebilir — sadece imleq yakinligi degil.</p>
+        <table>
+          <thead><tr><th>Ayar</th><th>Aciklama</th></tr></thead>
+          <tbody>
+            <tr><td><code>github.copilot.nextEditSuggestions.enabled</code></td><td>NES'i etkinlestir</td></tr>
+            <tr><td><code>github.copilot.nextEditSuggestions.extendedRange</code></td><td>Uzak mesafe modu</td></tr>
+          </tbody>
+        </table>
+        <div class="callout ok" style="margin-top:12px;">
+          <strong>Pratik ornek:</strong> Bir fonksiyon adini degistirdiginde NES, dosyanin basindaki JSDoc yorumunu da guncellemenizi onerir.
+        </div>
+        <p class="muted" style="margin-top:12px;">Copilot Status Bar'da <strong>NES isteklilik seviyesi</strong> ayarlanabilir: daha fazla oneri (daha az alakali) veya daha az oneri (daha alakali).</p>
+      </article>
+    </section>
+
+    <!-- Modal Editor + Ghostty + Python -->
+    <section class="section grid-2">
+      <article class="card reveal reveal-delay-1">
+        <h2>Modal Editor (Deneysel)</h2>
+        <p class="muted">Sekme duzenini etkilemeden uzerine kayan yeni editor tipi.</p>
+        <div class="code-box">
+          <button class="copy-btn" data-copy-target="#cmd-modal">Kopyala</button>
+          <code id="cmd-modal">{
+  "workbench.editor.useModal": "some"
+}</code>
+        </div>
+        <p class="muted" style="margin-top:10px;">Gecerli oldugu yerler: Ayarlar, Klavye Kisayollari, Profiller, AI Modelleri, Calisma Alani Guveni.</p>
+
+        <h2 style="margin-top:20px;">Bildirim Konumu</h2>
+        <div class="code-box">
+          <button class="copy-btn" data-copy-target="#cmd-notif">Kopyala</button>
+          <code id="cmd-notif">{
+  "workbench.notifications.position": "top-right"
+}</code>
+        </div>
+        <p class="muted" style="margin-top:8px;">Secenekler: <code>top-right</code>, <code>bottom-right</code> (varsayilan), <code>bottom-left</code></p>
+      </article>
+
+      <article class="card reveal reveal-delay-2">
+        <h2>Python Ortamlari GA</h2>
+        <p class="muted">Bir yillik preview'dan sonra Python Environments eklentisi Genel Kullanim'a gecti.</p>
+        <div class="feature-grid" style="grid-template-columns: 1fr 1fr; margin-top:10px;">
+          <div class="feature-item">
+            <span class="feature-title">Hizli Olustur</span>
+            <span class="feature-desc">Tek tikla ortam olusturma.</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-title">uv Entegrasyonu</span>
+            <span class="feature-desc">Daha hizli kurulum ve paket yonetimi.</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-title">Python Projeleri</span>
+            <span class="feature-desc">Ortamlari klasorlere ata.</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-title">Tasınabilir Ayarlar</span>
+            <span class="feature-desc">Sabit yollar yerine yonetici turleri.</span>
+          </div>
+        </div>
+        <div class="code-box" style="margin-top:12px;">
+          <button class="copy-btn" data-copy-target="#cmd-python">Kopyala</button>
+          <code id="cmd-python">{ "python.useEnvsExtension": true }</code>
+        </div>
+
+        <h2 style="margin-top:20px;">Ghostty Terminal</h2>
+        <div class="code-box">
+          <button class="copy-btn" data-copy-target="#cmd-ghostty">Kopyala</button>
+          <code id="cmd-ghostty">// macOS
+{ "terminal.external.osxExec": "Ghostty.app" }
+
+// Linux
+{ "terminal.external.linuxExec": "ghostty" }</code>
+        </div>
+      </article>
+    </section>
+
+    <!-- AI Co-Author + Debugging -->
+    <section class="section card reveal">
+      <h2>Diger Onemli Yenilikler</h2>
+      <div class="grid-2">
+        <div>
+          <p class="kicker">Kaynak Kontrol</p>
+          <p class="muted">AI tarafindan uretilen commit'lere otomatik <code>Co-authored-by:</code> etiketi eklenir.</p>
+          <div class="code-box">
+            <button class="copy-btn" data-copy-target="#cmd-coauthor">Kopyala</button>
+            <code id="cmd-coauthor">{
+  "git.addAICoAuthor": "chatAndAgent"
+}</code>
+          </div>
+          <p class="muted" style="margin-top:8px;">Secenekler: <code>off</code>, <code>chatAndAgent</code>, <code>all</code></p>
+        </div>
+        <div>
+          <p class="kicker">JavaScript Hata Ayiklayici</p>
+          <p class="muted">Ozel debug gosterimi icin <code>Symbol.for('debug.properties')</code> metodu:</p>
+          <div class="code-box">
+            <button class="copy-btn" data-copy-target="#cmd-debug">Kopyala</button>
+            <code id="cmd-debug">class KullaniciBilgisi {
+  [Symbol.for('debug.properties')]() {
+    return {
+      'Ad': this.ad,
+      'Gizli': '[gizlendi]'
+    };
+  }
+}</code>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section card reveal">
+      <h2>Modulleri Bitirdin!</h2>
+      <p class="muted">3 modul tamamsa bilgini quiz ile test et. 5 soruluk mini test ve performans grafigi seni bekliyor.</p>
+      <p class="mt-sm">
+        <a class="btn btn-primary" href="quiz.html">Quiz'e Gec</a>
+      </p>
+    </section>
+
   </main>
+
+  <footer>
+    <div class="container">
+      <span>VS Code v1.110 | Modul 3: Editor + Terminal + Diller</span>
+      <a href="kaynaklar.html">Kaynaklar</a>
+    </div>
+  </footer>
 
   <script src="../assets/js/app.js"></script>
 </body>
