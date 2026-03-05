@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz - VS Code v1.110</title>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand"><span class="brand-badge"></span> Quiz</div>
+      <nav class="nav-links">
+        <a href="../index.html">Ana Sayfa</a>
+        <a href="modul-agent.html">Modul 1</a>
+        <a href="modul-chat.html">Modul 2</a>
+        <a href="modul-editor-terminal.html">Modul 3</a>
+        <a class="active" href="quiz.html">Quiz</a>
+      </nav>
+      <button data-theme-toggle>Tema</button>
+    </div>
+  </header>
+
+  <main class="container section">
+    <article class="card">
+      <p class="kicker">Final Test</p>
+      <h1>Bilgini Test Et</h1>
+      <p class="muted">5 soruluk mini test. Bitirdikten sonra performans grafigi otomatik olusur.</p>
+      <label><input type="checkbox" data-progress-id="quiz"> Quizi tamamladim</label>
+    </article>
+
+    <section class="section" id="quiz-root"></section>
+
+    <section class="section grid-2">
+      <article class="card">
+        <button id="quiz-submit">Sonucu Hesapla</button>
+        <p id="quiz-result" class="muted" style="margin-top:10px;">Sonuc burada gorunecek.</p>
+      </article>
+      <article class="card">
+        <h2>Quiz Performansi</h2>
+        <svg id="quiz-chart" viewBox="0 0 320 220" aria-label="Quiz performans grafigi">
+          <image href="../assets/svg/quiz-performans-bos.svg" width="320" height="220" />
+        </svg>
+      </article>
+    </section>
+
+    <section class="section card">
+      <h2>Devam Et</h2>
+      <p>Kursu bitirdin. Kaynaklar sayfasindan resmi baglantilara ulasabilirsin.</p>
+      <a class="btn" href="kaynaklar.html">Kaynaklar</a>
+    </section>
+  </main>
+
+  <script src="../assets/js/app.js"></script>
+  <script src="../assets/js/quiz.js"></script>
+</body>
+</html>

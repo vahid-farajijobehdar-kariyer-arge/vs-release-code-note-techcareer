@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 180" role="img" aria-labelledby="t d">
+  <title id="t">v1.110 Zaman Cizelgesi</title>
+  <desc id="d">Surumde one cikan yeniliklerin sirali zaman cizelgesi.</desc>
+  <rect width="640" height="180" fill="#1f2430" rx="14"/>
+  <line x1="60" y1="92" x2="580" y2="92" stroke="#4fc1ff" stroke-width="4"/>
+  <circle cx="100" cy="92" r="12" fill="#79ffb3"/>
+  <circle cx="240" cy="92" r="12" fill="#ffcc66"/>
+  <circle cx="380" cy="92" r="12" fill="#4fc1ff"/>
+  <circle cx="520" cy="92" r="12" fill="#ff6b6b"/>
+  <text x="66" y="60" fill="#e6edf3" font-size="12">Ajan Kontrolleri</text>
+  <text x="200" y="130" fill="#e6edf3" font-size="12">Ajan Genisletilebilirlik</text>
+  <text x="345" y="60" fill="#e6edf3" font-size="12">Akilli Oturumlar</text>
+  <text x="485" y="130" fill="#e6edf3" font-size="12">Terminal + Diller</text>
+</svg>

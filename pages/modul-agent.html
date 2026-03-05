@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modul 1 - Ajan Kontrolleri</title>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand"><span class="brand-badge"></span> Modul 1</div>
+      <nav class="nav-links">
+        <a href="../index.html">Ana Sayfa</a>
+        <a class="active" href="modul-agent.html">Modul 1</a>
+        <a href="modul-chat.html">Modul 2</a>
+        <a href="modul-editor-terminal.html">Modul 3</a>
+        <a href="quiz.html">Quiz</a>
+      </nav>
+      <button data-theme-toggle>Tema</button>
+    </div>
+  </header>
+
+  <main class="container section">
+    <article class="card">
+      <p class="kicker">Modul 1</p>
+      <h1>Ajan Kontrolleri ve Genisletme</h1>
+      <p class="muted">Bu bolumde VS Code 1.110 ile gelen ajan ozelliklerini ogreneceksin: arka plan ajanlari, debug paneli, auto approve ve plugin yapisi.</p>
+      <label><input type="checkbox" data-progress-id="m1"> Bu modulu tamamladim</label>
+    </article>
+
+    <section class="section grid-2">
+      <article class="card">
+        <h2>Ana Kavramlar</h2>
+        <div class="accordion-item open">
+          <button class="accordion-header">Background Agents</button>
+          <div class="accordion-content">
+            Uzun gorevleri arka planda devam ettirir. /compact komutu ile baglami kucultebilirsin.
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header">Agent Debug Panel</button>
+          <div class="accordion-content">
+            Ajanin hangi araclari cagdirdigini ve hangi prompt/hook yukledigini canli gosterir.
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header">Auto Approve</button>
+          <div class="accordion-content">
+            /autoApprove hiz kazandirir ama onay adimlarini atladigi icin dikkatli kullanilmalidir.
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <h2>Ozet Grafik</h2>
+        <img src="../assets/svg/zaman-cizelgesi.svg" alt="Ajan ozellikleri zaman cizelgesi">
+      </article>
+    </section>
+
+    <section class="section card">
+      <h2>Kopyala ve Dene</h2>
+      <p class="muted">Ornek komutu kopyalayip terminalde deneyebilirsin.</p>
+      <div class="code-box">
+        <button class="copy-btn" data-copy-target="#cmd1">Kopyala</button>
+        <code id="cmd1">copilot plugin install ornek-plugin@awesome-copilot</code>
+      </div>
+      <a class="btn" href="modul-chat.html">Sonraki Modul</a>
+    </section>
+  </main>
+
+  <script src="../assets/js/app.js"></script>
+</body>
+</html>

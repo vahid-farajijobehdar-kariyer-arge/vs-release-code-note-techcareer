@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 220" role="img" aria-labelledby="t d">
+  <title id="t">Quiz Performans Bos Grafik</title>
+  <desc id="d">Quiz sonucu girilmeden once gosterilen bos sutun grafigi.</desc>
+  <rect width="320" height="220" fill="#1f2430" rx="12"/>
+  <line x1="40" y1="190" x2="290" y2="190" stroke="#9ca8b7" stroke-opacity="0.5"/>
+  <rect x="80" y="130" width="70" height="60" fill="#7ee787" fill-opacity="0.4" rx="8"/>
+  <rect x="190" y="130" width="70" height="60" fill="#ff6b6b" fill-opacity="0.4" rx="8"/>
+  <text x="84" y="205" font-size="12" fill="#e6edf3">Dogru</text>
+  <text x="204" y="205" font-size="12" fill="#e6edf3">Yanlis</text>
+  <text x="60" y="28" font-size="12" fill="#9ca8b7">Testi coz ve sonucu gor</text>
+</svg>

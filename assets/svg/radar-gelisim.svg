@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 320" role="img" aria-labelledby="t d">
+  <title id="t">Gelisim Radar Grafigi</title>
+  <desc id="d">Ajan, sohbet, editor, terminal ve erisilebilirlik gelisim seviyeleri.</desc>
+  <rect width="360" height="320" fill="#1f2430" rx="14"/>
+  <polygon points="180,48 302,122 256,252 104,252 58,122" fill="none" stroke="#9ca8b7" stroke-opacity="0.5"/>
+  <polygon points="180,78 270,128 236,224 124,224 90,128" fill="#4fc1ff" fill-opacity="0.35" stroke="#4fc1ff"/>
+  <text x="163" y="34" fill="#e6edf3" font-size="12">Ajan</text>
+  <text x="305" y="126" fill="#e6edf3" font-size="12">Sohbet</text>
+  <text x="251" y="268" fill="#e6edf3" font-size="12">Terminal</text>
+  <text x="88" y="268" fill="#e6edf3" font-size="12">Editor</text>
+  <text x="28" y="126" fill="#e6edf3" font-size="12">Erisim</text>
+</svg>
