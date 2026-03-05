@@ -786,6 +786,116 @@ footer a { color: var(--muted) !important; }
 footer a:hover { color: var(--tc-green) !important; }
 footer .tc { color: var(--tc-green); font-weight: 600; }
 
+/* ---- Event Card ---- */
+.event-card {
+  border-color: color-mix(in srgb, var(--tc-green) 30%, var(--border));
+  background: linear-gradient(135deg,
+    color-mix(in srgb, var(--bg-elev) 88%, var(--tc-green) 6%),
+    color-mix(in srgb, var(--panel) 88%, var(--accent) 5%)
+  );
+}
+.event-card::after {
+  background: radial-gradient(ellipse at 0% 0%, var(--tc-glow) 0%, transparent 65%);
+}
+.event-card:hover {
+  box-shadow: var(--shadow), 0 0 48px var(--tc-glow);
+}
+
+.event-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.event-time {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--tc-green);
+  padding: 4px 12px;
+  border: 1px solid color-mix(in srgb, var(--tc-green) 30%, transparent);
+  border-radius: 999px;
+  background: var(--tc-glow-soft);
+  letter-spacing: 0.4px;
+}
+.event-time::before {
+  content: '';
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--tc-green);
+  box-shadow: 0 0 8px var(--tc-green);
+  animation: pulse-glow 1.8s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+.speaker-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  border: 1px solid color-mix(in srgb, var(--tc-green) 18%, var(--border));
+  border-radius: 14px;
+  background: color-mix(in srgb, var(--panel) 60%, transparent);
+  margin-bottom: 10px;
+  transition: border-color 0.22s, transform 0.22s;
+}
+.speaker-row:hover {
+  border-color: color-mix(in srgb, var(--tc-green) 40%, transparent);
+  transform: translateX(3px);
+}
+.speaker-avatar {
+  width: 42px; height: 42px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--tc-green), var(--accent-2));
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1rem; font-weight: 700;
+  color: #04070f;
+  flex-shrink: 0;
+  box-shadow: 0 0 12px var(--tc-glow);
+}
+.speaker-info strong {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--text);
+  margin-bottom: 2px;
+}
+.speaker-info span {
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+.speaker-info .speaker-role {
+  color: var(--tc-green);
+  font-weight: 500;
+}
+
+.attendee-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--panel) 40%, transparent);
+  margin-bottom: 8px;
+  font-size: 0.86rem;
+  color: var(--muted);
+  transition: border-color 0.2s;
+}
+.attendee-row:hover {
+  border-color: color-mix(in srgb, var(--tc-green) 25%, transparent);
+  color: var(--text);
+}
+.attendee-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--tc-green);
+  opacity: 0.6;
+  flex-shrink: 0;
+}
+
 /* ---- Scroll Reveal ---- */
 .reveal {
   opacity: 0;
